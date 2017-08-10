@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>JS插件-警告框</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<!--
+    1. am-alert + tab  警告框
+    2. am-alert-success   绿色
+       am-alert-warning   橙色
+       am-alert-danger    红色
+       am-alert-secondary 灰色
+-->
+
+<!--在这里编写你的代码-->
+<a href="index.html">返回首页</a>
+<h3 style="border-radius">标准警告框</h3>
+    <div class="am-alert" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p>没什么可给你，但求凭这阙歌。谢谢你风雨里，都不退愿陪着我。</p>
+    </div>
+<h3>带颜色的警告框</h3>
+    <div class="am-alert am-alert-success" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p>没什么可给你，但求凭这阙歌。谢谢你风雨里，都不退愿陪着我。</p>
+    </div>
+<ul>
+    <li>class="am-alert am-alert-success" data-am-alert</li>
+    <li>am-alert-success    绿色</li>
+    <li> am-alert-warning   橙色</li>
+    <li> am-alert-danger    红色</li>
+    <li> am-alert-secondary 灰色</li>
+
+
+</ul>
+<h3>分割线</h3>
+<div>
+    <h3>这是普通的分割线 hr</h3>
+    <hr>
+</div>
+<p>amazeui-普通分割线hr class=am-divider </p>
+<hr class="am-divider">
+<p>amazeui-灰色分割线 《default》 hr class=am-divider am-divider-default</p>
+<hr class="am-divider am-divider-default">
+<p>amazeui-点分割线 《dotted》 hr class=am-divider am-divider-dotted</p>
+<hr class="am-divider am-divider-dotted">
+<p>amazeui-虚线割线 《dsshed》 hr class=am-divider am-divider-dashed</p>
+<hr class="am-divider am-divider-dashed">
+
+<div>
+    <h3>弹出的警告框</h3>
+    <ul>
+        <li onclick="alert('这是弹出警告框\nyes?')">1、警告框</li>
+        <li onclick="if(confirm('是？或否？')){alert('yes')}else{alert('no')}">2、confirm证实</li>
+        <li onclick="youname=prompt('干啥呢？','你');if(youname !=''){alert(youname)}">3、提示警告框，允许用户与浏览器的信息交换</li>
+        <li>
+            <div id="alert-div" class="am-alert am-alert-warning am-animation-slide-top" data-am-alert style="display: none;">
+                <button type="button" class="am-close">&times</button>
+                <p>这里是Amazeui的警告弹出框-动画效果  am-animation-slide-top</p>
+            </div>
+        </li>
+        <li id="alert-btn">Amazeui的警告框弹出</li>
+        <li></li>
+    </ul>
+</div>
+
+<h3>作业 底部div 从左往右出现</h3>
+<div id="ani-left-right" class="am-animation-slide-left" style="width: 400px;height: 50px;background: pink;position:fixed;bottom: 0;"></div>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#alert-btn").click(function () {
+            $('#alert-div').show()
+            setTimeout("$('#alert-div').hide()",5000)
+        })
+    })
+</script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+</body>
+</html>
